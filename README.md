@@ -7,7 +7,7 @@ Copy the contents to your repository and build your code upon it.
 
 File demo.cpp contains a code for fibonacci() function.
 
-File test_demo.cpp has a few tests to make sure the fibonacci() function works correctly.
+File demo_test.cpp has a few tests to make sure the fibonacci() function works correctly.
 
 To test the code from command line, run:
 
@@ -24,6 +24,6 @@ Source files:
 
  * demo.hpp - declaration of fibonacci() routine
  * demo.cpp - implementation of fibonacci() routine
- * test_demo.cpp - tests for fibonacci() routine, using Googletest
+ * demo_test.cpp - tests for fibonacci() routine, using Googletest
  * gtest/gtest.h - header file of Googletest framework
  * gtest/gtest-all.cpp - fused sources of Googletest framework, created by script https://github.com/google/googletest/blob/master/googletest/scripts/fuse_gtest_files.py

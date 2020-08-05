@@ -1,4 +1,4 @@
-OBJ             = demo.o test_demo.o gtest/gtest-all.o
+OBJ             = demo.o demo_test.o gtest/gtest-all.o
 CXXFLAGS        = -std=c++11 -O -g -Wall -Werror -I.
 LDFLAGS         = -g
 LIBS            = -lpthread
