@@ -2,7 +2,7 @@
 // Calculate Fibonacci numbers.
 //
 #include <stdexcept>
-#include "demo.hpp"
+#include "demo.h"
 
 static unsigned long fib_recursive(unsigned index, unsigned iteration, unsigned long prev2, unsigned long prev1)
 {

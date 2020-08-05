@@ -1,7 +1,7 @@
 //
 // Test the fibonacci() function.
 //
-#include "demo.hpp"
+#include "demo.h"
 #include "gtest/gtest.h"
 
 //
