@@ -1,1 +1,1 @@
-unsigned long fibonacci(unsigned index);
+int *twoSum(int *nums, int numsSize, int target, int *returnSize);

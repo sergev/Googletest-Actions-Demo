@@ -1,29 +1,31 @@
 //
-// Calculate Fibonacci numbers.
+// Task: https://leetcode.com/problems/two-sum/
+//
+// Given an array of integers nums and an integer target, return
+// indices of the two numbers such that they add up to target.
+//
+// You may assume that each input would have exactly one
+// solution, and you may not use the same element twice.
+//
+// You can return the answer in any order.
 //
 #include <stdexcept>
 #include "demo.h"
 
-static unsigned long fib_recursive(unsigned index, unsigned iteration, unsigned long prev2, unsigned long prev1)
+int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
-    auto sum = prev2 + prev1;
-
-    // Check for overflow.
-    if (sum < prev1)
-        throw std::runtime_error("Fibonacci overflow");
-
-    iteration++;
-    if (iteration == index)
-        return sum;
-
-    // Use tail recursion.
-    return fib_recursive(index, iteration, prev1, sum);
-}
-
-unsigned long fibonacci(unsigned index)
-{
-    if (index < 2)
-        return index;
-
-    return fib_recursive(index, 1, 0, 1);
+    int i, j;
+    int *ret = (int*) calloc(2, sizeof(int));
+    for (i = 0; i < numsSize; i++)
+    {
+        int key = target - nums[i];
+        for (j = i + 1; j < numsSize; j++)
+            if (nums[j] == key)
+            {
+                ret[0] = i;
+                ret[1] = j;
+            }
+    }
+    *returnSize = 2;
+    return ret;
 }

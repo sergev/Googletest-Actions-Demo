@@ -1,38 +1,62 @@
 //
-// Test the fibonacci() function.
+// Test the twoSum() function.
 //
 #include "demo.h"
 #include "gtest/gtest.h"
 
 //
-// Check valid inputs.
+// Example 1:
 //
-TEST(fibonacci, check_valid)
+//       Input: nums = [2,7,11,15], target = 9
+//      Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+//
+TEST(twoSum, example_1)
 {
-    EXPECT_EQ(fibonacci(0), 0U);
-    EXPECT_EQ(fibonacci(1), 1U);
-    EXPECT_EQ(fibonacci(2), 1U);
-    EXPECT_EQ(fibonacci(3), 2U);
-    EXPECT_EQ(fibonacci(4), 3U);
-    EXPECT_EQ(fibonacci(5), 5U);
-    EXPECT_EQ(fibonacci(10), 55U);
-    EXPECT_EQ(fibonacci(20), 6765U);
-    EXPECT_EQ(fibonacci(30), 832040U);
-    EXPECT_EQ(fibonacci(40), 102334155U);
-    EXPECT_EQ(fibonacci(50), 12586269025UL);
-    EXPECT_EQ(fibonacci(60), 1548008755920UL);
-    EXPECT_EQ(fibonacci(70), 190392490709135UL);
-    EXPECT_EQ(fibonacci(80), 23416728348467685UL);
-    EXPECT_EQ(fibonacci(90), 2880067194370816120UL);
-    EXPECT_EQ(fibonacci(93), 12200160415121876738UL);
+    int nums[] = { 2, 7, 11, 15 };
+    int returnSize = 0;
+    int *result = twoSum(nums, 4, 9, &returnSize);
+
+    EXPECT_EQ(returnSize, 2);
+    ASSERT_NE(result, nullptr);
+    EXPECT_EQ(result[0], 0);
+    EXPECT_EQ(result[1], 1);
 }
 
 //
-// Check exception on overflow.
+// Example 2:
 //
-TEST(fibonacci, check_overflow)
+//  Input: nums = [3,2,4], target = 6
+// Output: [1,2]
+//
+TEST(twoSum, example_2)
 {
-    EXPECT_ANY_THROW(fibonacci(100));
+    int nums[] = { 3, 2, 4 };
+    int returnSize = 0;
+    int *result = twoSum(nums, 3, 6, &returnSize);
+
+    EXPECT_EQ(returnSize, 2);
+    ASSERT_NE(result, nullptr);
+    EXPECT_EQ(result[0], 1);
+    EXPECT_EQ(result[1], 2);
+}
+
+//
+// Example 3:
+//
+//  Input: nums = [3,3], target = 6
+// Output: [0,1]
+//
+TEST(twoSum, example_3)
+{
+    int nums[] = { 3, 3 };
+    int returnSize = 0;
+    int *result = twoSum(nums, 2, 6, &returnSize);
+
+    EXPECT_EQ(returnSize, 2);
+    ASSERT_NE(result, nullptr);
+    EXPECT_EQ(result[0], 0);
+    EXPECT_EQ(result[1], 1);
 }
 
 int main(int argc, char **argv)
